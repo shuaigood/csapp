@@ -20,7 +20,7 @@ namespace WirelessControl
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static string T61_WIFI_ADAPTER = "Intel(R) PRO/Wireless 3945ABG Network Connection";
+        private static string WIFI_ADAPTER = "Intel(R) Centrino(R) Ultimate-N 6300 AGN";//"Intel(R) PRO/Wireless 3945ABG Network Connection";
 
         private ManagementObject m_WifiAdapter;
 
@@ -30,8 +30,7 @@ namespace WirelessControl
         }
 
         private ManagementObject GetWifiAdapter(string name)
-        {
-            //Intel(R) PRO/Wireless 3945ABG Network Connection
+        {            
 
             ManagementObject objFound = null;
 
@@ -57,7 +56,7 @@ namespace WirelessControl
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            m_WifiAdapter = GetWifiAdapter(T61_WIFI_ADAPTER);
+            m_WifiAdapter = GetWifiAdapter(WIFI_ADAPTER);
         }
 
         private void Disable_Click(object sender, RoutedEventArgs e)
